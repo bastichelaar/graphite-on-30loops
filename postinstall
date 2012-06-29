@@ -41,5 +41,3 @@ mv $PROJECT_ROOT/conf/* $graphite_install_dir/conf
 
 cd $graphite_install_dir
 $python graphite/manage.py syncdb --noinput
-
-env
