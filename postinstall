@@ -46,4 +46,4 @@ export GRAPHITE_STORAGE_DIR="$HOME/data"
 EOF
 
 cd $graphite_install_dir
-$python graphite/manage.py syncdb --no-input
+$python graphite/manage.py syncdb --noinput
