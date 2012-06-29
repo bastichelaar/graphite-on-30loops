@@ -1,6 +1,6 @@
 #!/bin/bash
 python="$VIRTUAL_ENV/bin/python"
-graphite_install_dir="$VIRTUAL_ENV"
+graphite_install_dir="$PROJECT_ROOT/graphite"
 graphite_version="origin/0.9.x"
 carbon_version="origin/0.9.x"
 stage_dir="$start_dir/tmp"
@@ -44,3 +44,6 @@ export PATH="$graphite_install_dir/bin:$PATH"
 export PYTHONPATH="$graphite_install_dir:$graphite_install_dir/lib:$PYTHONPATH"
 export GRAPHITE_STORAGE_DIR="$HOME/data"
 EOF
+
+cd $graphite_install_dir
+$python manage.py syncdb --no-input
