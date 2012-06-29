@@ -32,3 +32,5 @@ if [ ! -d "$HOME/data" ] ; then
   echo "moving data directories into place"
   mv $graphite_install_dir/storage $HOME/data
 fi
+
+mv $PROJECT_ROOT/conf/graphite_local_settings.py $graphite_install_dir/graphite/local_settings.py
