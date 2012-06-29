@@ -39,11 +39,5 @@ fi
 mv $PROJECT_ROOT/conf/graphite_local_settings.py $graphite_install_dir/graphite/local_settings.py
 mv $PROJECT_ROOT/conf/* $graphite_install_dir/conf
 
-cat >> /app/conf/environment.conf << EOF
-export PATH="$graphite_install_dir/bin:$PATH"
-export PYTHONPATH="$graphite_install_dir:$graphite_install_dir/lib:$PYTHONPATH"
-export GRAPHITE_STORAGE_DIR="$HOME/data"
-EOF
-
 cd $graphite_install_dir
 $python graphite/manage.py syncdb --noinput
