@@ -1,4 +1,5 @@
 #!/bin/bash
+python="$VIRTUAL_ENV/bin/python"
 graphite_install_dir="$HOME/graphite"
 graphite_version="origin/0.9.x"
 carbon_install_dir="$HOME/carbon"
@@ -12,16 +13,16 @@ git reset --hard $carbon_version
 
 echo "installing carbon"
 python setup.py install --prefix=$graphite_install_dir --install-lib=$graphite_install_dir
-cd ~
+#cd ~
 
 # Install graphite
-echo "checking out graphite-web $graphite_version"
-git clone git://github.com/graphite-project/graphite-web.git
-cd graphite-web
-git reset --hard $graphite_version
+#echo "checking out graphite-web $graphite_version"
+#git clone git://github.com/graphite-project/graphite-web.git
+#cd graphite-web
+#git reset --hard $graphite_version
 
-echo "installing graphite-web"
-python setup.py install --prefix=$graphite_install_dir --install-lib=$graphite_install_dir
+#echo "installing graphite-web"
+#python setup.py install --prefix=$graphite_install_dir --install-lib=$graphite_install_dir
 
 # Clean up
 if [ ! -d "$HOME/data" ] ; then
