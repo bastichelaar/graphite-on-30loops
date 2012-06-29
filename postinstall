@@ -5,6 +5,9 @@ graphite_version="origin/0.9.x"
 carbon_install_dir="$HOME/carbon"
 carbon_version="origin/0.9.x"
 
+# Activate virtualenv
+source $VIRTUAL_ENV/bin/activate
+
 # Install carbon
 echo "checking out carbon $carbon_version"
 git clone git://github.com/graphite-project/carbon.git
@@ -16,13 +19,13 @@ $python setup.py install --prefix=$graphite_install_dir --install-lib=$graphite_
 #cd ~
 
 # Install graphite
-#echo "checking out graphite-web $graphite_version"
-#git clone git://github.com/graphite-project/graphite-web.git
-#cd graphite-web
-#git reset --hard $graphite_version
+echo "checking out graphite-web $graphite_version"
+git clone git://github.com/graphite-project/graphite-web.git
+cd graphite-web
+git reset --hard $graphite_version
 
-#echo "installing graphite-web"
-#python setup.py install --prefix=$graphite_install_dir --install-lib=$graphite_install_dir
+echo "installing graphite-web"
+python setup.py install --prefix=$graphite_install_dir --install-lib=$graphite_install_dir
 
 # Clean up
 if [ ! -d "$HOME/data" ] ; then
