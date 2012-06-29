@@ -1,8 +1,8 @@
 #!/bin/bash
 graphite_install_dir="$HOME/graphite"
-graphite_version="origin/0.9.10"
+graphite_version="origin/0.9.x"
 carbon_install_dir="$HOME/carbon"
-carbon_version="origin/0.9.10"
+carbon_version="origin/0.9.x"
 
 # Install carbon
 echo "checking out carbon $carbon_version"
@@ -28,6 +28,3 @@ if [ ! -d "$HOME/data" ] ; then
   echo "moving data directories into place"
   mv $graphite_install_dir/storage $HOME/data
 fi
-
-mv $PROJECT_ROOT/conf/graphite_local_settings.py $graphite_install_dir/graphite/local_settings.py
-mv $PROJECT_ROOT/conf/* $graphite_install_dir/conf
