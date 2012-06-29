@@ -3,7 +3,7 @@ python="$VIRTUAL_ENV/bin/python"
 graphite_install_dir="$PROJECT_ROOT/graphite"
 graphite_version="origin/0.9.x"
 carbon_version="origin/0.9.x"
-stage_dir="$start_dir/tmp"
+stage_dir="$PROJECT_ROOT/tmp"
 
 # Activate virtualenv
 source $VIRTUAL_ENV/bin/activate
@@ -46,4 +46,4 @@ export GRAPHITE_STORAGE_DIR="$HOME/data"
 EOF
 
 cd $graphite_install_dir
-$python manage.py syncdb --no-input
+$python graphite/manage.py syncdb --no-input
