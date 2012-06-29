@@ -12,7 +12,7 @@ cd carbon
 git reset --hard $carbon_version
 
 echo "installing carbon"
-python setup.py install --prefix=$graphite_install_dir --install-lib=$graphite_install_dir
+$python setup.py install --prefix=$graphite_install_dir --install-lib=$graphite_install_dir
 #cd ~
 
 # Install graphite
